@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+// import { API_BASE_URL } from '../config';
 export const FETCH_CONCERT_REQUEST = 'FETCH CONCERT REQUEST';
 export const FETCH_CONCERT_SUCCESS = 'FETCH CONCERT SUCCESS';
 export const FETCH_CONCERT_ERROR = 'FETCH CONCERT ERROR';
@@ -7,7 +7,7 @@ export const SHOW_LOCATION = 'SHOW LOCATION';
 export const SHOW_ABOUT_DESCRIPTION = 'SHOW ABOUT DESCRIPTION';
 export const CONCERT_SELECTED = 'CONCERT SELECTED';
 
-
+const API_BASE_URL = 'https://quickconcert.herokuapp.com';
 
 // sync actions 
 
