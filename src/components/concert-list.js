@@ -6,8 +6,9 @@ import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
 import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
-import  HandleNoConcerts  from './noresults';
-import EventConfirmation from './custom-event-confirmation'
+import HandleNoConcerts  from './noresults';
+import EventConfirmation from './custom-event-confirmation';
+
 
 
 
@@ -38,7 +39,7 @@ export class ConcertList extends React.Component {
                <div>
               <UserLocation/>
               {console.log(this.props.concerts)}
-              <ConcertDetails />
+              {/* <ConcertDetails /> */}
               {/* BREAKS EVERYTHING --> <Route exact path='/event/:id' component={EventConfirmation} /> */}
               {this.renderData()}
             </div>

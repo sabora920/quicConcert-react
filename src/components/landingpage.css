@@ -18,3 +18,8 @@ h1 {
   text-shadow: rgb(195, 214, 25) 0 0 10px;  
 }
 
+.about {
+  font-size: .6em;
+  text-decoration: none;
+  color: white;
+}

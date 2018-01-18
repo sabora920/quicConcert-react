@@ -55,8 +55,6 @@ export const selectConcert = function(concert){
     }
 }
 
-
-
 //async action: there can be more than one
 //pass in arg for dates and location
 export const fetchConcerts = function(location){
@@ -65,7 +63,7 @@ export const fetchConcerts = function(location){
         dispatch(fetchConcertRequest());
         return fetch(`${API_BASE_URL}/api/concerts?city=${location}`)
         .then(res => {
-
+            console.log(res);
             if(!res.ok){
                 return Promise.reject(res.statusText);
             }

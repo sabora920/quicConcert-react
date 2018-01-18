@@ -14,7 +14,7 @@ export class LandingPage extends React.Component {
      
   return (
     <section id='landing'>
-      <a href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
+      <a className="about" href='#' onClick={() => this.props.dispatch(aboutPage())}>About</a>
       { this.props.about && <InfoSection /> }
       <div>
         {titleText}

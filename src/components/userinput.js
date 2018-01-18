@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchConcerts } from '../actions/concerts';
 import './userinput.css';
+import { Link } from 'react-router-dom';
 
 
 export class UserLocation extends React.Component {
@@ -10,7 +11,7 @@ export class UserLocation extends React.Component {
     e.preventDefault();
     const value = this.input.value.toLowerCase();
     this.props.dispatch(fetchConcerts(value));
-  
+    // window.location.href = "/search-results";
   }
   
   render() {
@@ -26,6 +27,11 @@ export class UserLocation extends React.Component {
         ref={input => this.input = input}
         required 
         placeholder='Atlanta'/>
+      <Link to="/search-results">
+      <div>
+        Test
+      </div>
+      </Link>
       <button 
         type='submit' 
         name='Search' 

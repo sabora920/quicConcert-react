@@ -29,7 +29,7 @@ export function ConcertDetails(props) {
       </li>
   )});
   return (
-  <ul className='concert-results'>{list}</ul>
+  <ul className='concert-results'>ABCDEF</ul>
   )
 }
 
