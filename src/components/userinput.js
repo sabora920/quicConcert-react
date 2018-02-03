@@ -1,47 +1,40 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { fetchConcerts } from '../actions/concerts';
+import  { connect } from 'react-redux';
 import './userinput.css';
-import { Link } from 'react-router-dom';
-
 
 export class UserLocation extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
     const value = this.input.value.toLowerCase();
-    this.props.dispatch(fetchConcerts(value));
-    // window.location.href = "/search-results";
+    window.location.href = "/search-results/" + value;
   }
   
   render() {
     return (
       <form 
-      id='search-form'
-      onSubmit={(e) => {
-        this.handleSubmit(e)}}>
-      <input 
-        id="search-input"
-        type='text' 
-        name='userLocation' 
-        ref={input => this.input = input}
-        required 
-        placeholder='Atlanta'/>
-      <Link to="/search-results">
-      <div>
-        Test
-      </div>
-      </Link>
-      <button 
-        type='submit' 
-        name='Search' 
-        id='searchButton' 
-        className='searchButton'>
-        Search</button>
-    </form>
+        id='search-form'
+        onSubmit={(e) => {
+          this.handleSubmit(e)}}>
+        <input 
+          id="search-input"
+          type='text' 
+          name='userLocation' 
+          ref={input => this.input = input}
+          required 
+          placeholder='Atlanta'/>
+        <button 
+          type='submit' 
+          name='Search' 
+          id='searchButton' 
+          className='searchButton'>
+          Search</button>
+      </form>
     )
   }
   
 }
 
 export default connect()(UserLocation)
+
+//indentions and Google React prettyifier 

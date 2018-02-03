@@ -19,3 +19,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(HandleNoConcerts)
 
 //currently not working
+//not using props

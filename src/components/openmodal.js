@@ -23,3 +23,5 @@ export const mapStateToProps = state => {
 }
 
 export default connect()(OpenModal)
+
+//space, indentions, and a console.log

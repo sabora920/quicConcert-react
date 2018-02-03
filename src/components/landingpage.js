@@ -7,7 +7,6 @@ import './landingpage.css';
 
 
 export class LandingPage extends React.Component {
- 
 
   render() {
     let titleText = <h1>quick concert</h1>
@@ -26,6 +25,7 @@ export class LandingPage extends React.Component {
 }
 
 }
+//fix indentions
 
 // comeback to this later
 const mapStateToProps = state => {

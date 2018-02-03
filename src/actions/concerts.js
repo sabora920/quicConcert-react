@@ -11,49 +11,36 @@ const API_BASE_URL = 'https://quickconcert.herokuapp.com';
 
 // sync actions 
 
-export const fetchConcertRequest = function(){
-    return {
+export const fetchConcertRequest = () => ({
         type: FETCH_CONCERT_REQUEST
-    }
-}
+})
 
-export const fetchConcertSuccess = function(data){
-    return {
+export const fetchConcertSuccess = (data) => ({
         type: FETCH_CONCERT_SUCCESS,
         data
-    }
-}
+})
 
-export const fetchConcertError = function(err){
-    return {
+export const fetchConcertError = (err) => ({
         type: FETCH_CONCERT_ERROR,
         err
-    }
-}
+})
 
-export const displayLanding = function() {
-    return {
+export const displayLanding = () => ({
         type: SHOW_LANDING
-    }
-}
+})
 
-export const displayUserLocation = function() {
-    return {
+export const displayUserLocation = () => ({
         type: SHOW_LOCATION
-    }
-}
+})
 
-export const aboutPage = function(){
-    return {
+export const aboutPage = () => ({
         type: SHOW_ABOUT_DESCRIPTION
-    }
-}
+})
 
-export const selectConcert = function(concert){
-    return {
-        type: CONCERT_SELECTED, payload: concert
-    }
-}
+export const selectConcert = (concert) => ({
+        type: CONCERT_SELECTED, 
+        payload: concert
+})
 
 //async action: there can be more than one
 //pass in arg for dates and location

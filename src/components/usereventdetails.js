@@ -26,3 +26,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(UserEventDetails)
+
+//spacing, indentions and concosle.log

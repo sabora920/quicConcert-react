@@ -3,26 +3,19 @@ export const FETCH_LINK_REQUEST = 'FETCH LINK REQUEST';
 export const FETCH_LINK_SUCCESS = 'FETCH LINK SUCCESS';
 export const FETCH_LINK_ERROR = 'FETCH LINK ERROR';
 
-export const fetchLinkRequest = function() {
-  return {
-      type: FETCH_LINK_REQUEST
-  }
-}
+export const fetchLinkRequest = () => ({
+    type: FETCH_LINK_REQUEST
+})
 
-export const fetchLinkSuccess = function(data) {
-  return {
-      type: FETCH_LINK_SUCCESS,
-      data
+export const fetchLinkSuccess = (data) => ({
+    type: FETCH_LINK_SUCCESS,
+    data
+})
 
-  }
-}
-
-export const fetchLinkError = function(err) {
-  return {
-      type: FETCH_LINK_ERROR,
-      err
-  }
-}
+export const fetchLinkError = (err) => ({
+    type: FETCH_LINK_ERROR,
+    err
+})
 
 export const fetchSharedLink = function(concertInfo) {
     console.log(concertInfo)

@@ -1,16 +1,10 @@
 import React from 'react';
 import { displayLanding } from '../actions/concerts';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Spinner from 'react-spinkit';
 import UserLocation from './userinput';
-import ConcertDetails from './concertdetails';
 import LandingPage from './landingpage';
-import HandleNoConcerts  from './noresults';
-import EventConfirmation from './custom-event-confirmation';
-
-
-
 
 export class ConcertList extends React.Component {
 
@@ -18,12 +12,12 @@ export class ConcertList extends React.Component {
     this.props.dispatch(displayLanding())
   }
 
-    renderData(){
+  renderData(){
 
-        if (this.props.loading) {
-            return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
-          }
-          if (this.props.error) {
+    if (this.props.loading) {
+      return <Spinner name="three-bounce" color="olive" fadeIn='none'/>
+    }
+    if (this.props.error) {
             return <p>{this.props.error}</p>
           }        
         }
@@ -60,3 +54,5 @@ const mapStateToProps = function(state){
 }
 
 export default connect(mapStateToProps)(ConcertList)
+
+//fix indentions

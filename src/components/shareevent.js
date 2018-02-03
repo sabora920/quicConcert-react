@@ -81,3 +81,5 @@ export const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(ShareEvent)
+
+//spacing and indentions

@@ -1,11 +1,7 @@
 .concert-results {
   color: white;
-  /* top: 40%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
-
   margin: 250px;  
-  margin-top: 650px;
+  margin-top: 150px;
 }
 
 li {
@@ -13,6 +9,7 @@ li {
   padding-top: 10px;
   border-radius: 10px;
   background: rgba(171, 230, 238, 0.5);
+  margin-bottom: 40px;
 }
 
 .results {

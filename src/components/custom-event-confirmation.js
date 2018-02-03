@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {API_BASE_URL} from '../config'
-import { LandingPage } from './landingpage';
 import { fetchEventDetails } from '../actions/event-details';
 import  UserEventDetails  from './usereventdetails';
 
-
+//get rid of logs for Github and fix indentions ans spacing
 export function EventConfirmation(props) {
 console.log(props.eventDetails)
 //if link clicked then show different view

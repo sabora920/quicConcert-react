@@ -1,11 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import './about-page.css';
 
-export function InfoSection(props) {
-
-
+export default function InfoSection(props) {
   return (
     <section id="what" tabIndex="-1">
  
@@ -23,10 +21,9 @@ export function InfoSection(props) {
   );
 }
 
-export const mapStateToProps = state => {
-return ({
-  about: state.about
-  })
-}
 
-export default connect(mapStateToProps)(InfoSection)
+// export const mapStateToProps = state => ({
+//     about: state.about
+// })
+
+// export default connect(mapStateToProps)(InfoSection)

@@ -21,7 +21,10 @@ export const reducer = (state=initialState, action) => {
   switch(action.type) {
 
     case CONCERT_SELECTED:
-    return Object.assign({}, state, {selectedConcert: action.payload})
+    return {
+      ...state,
+      selectedConcert: action.payload
+    }
 
     case SHOW_MODAL:
     return Object.assign({}, state, {isModalOpen: true})

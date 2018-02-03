@@ -4,32 +4,23 @@ export const FETCH_DETAILS_SUCCESS = 'FETCH DETAILS SUCCESS';
 export const FETCH_DETAILS_ERROR = 'FETCH DETAILS ERROR';
 export const SHOW_USER_EVENT = 'SHOW USER EVENT';
 
-export const fetchDetailsRequest = function() {
-  return {
-      type: FETCH_DETAILS_REQUEST
-  }
-}
+export const fetchDetailsRequest = () => ({
+    type: FETCH_DETAILS_REQUEST
+})
 
-export const fetchDetailsSuccess = function(data) {
-  return {
-      type: FETCH_DETAILS_SUCCESS,
-      data
+export const fetchDetailsSuccess = (data) => ({
+    type: FETCH_DETAILS_SUCCESS,
+    data
+})
 
-  }
-}
+export const fetchDetailsError = (err) => ({
+    type: FETCH_DETAILS_ERROR,
+    err
+})
 
-export const fetchDetailsError = function(err) {
-  return {
-      type: FETCH_DETAILS_ERROR,
-      err
-  }
-}
-
-export const displaUserEventDetails = function() {
-    return {
-        type: SHOW_USER_EVENT
-    }
-}
+export const displaUserEventDetails = () => ({
+    type: SHOW_USER_EVENT
+})
 
 export const fetchEventDetails = function(id) {
   // use url params to pass the id?
