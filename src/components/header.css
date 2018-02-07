@@ -1,0 +1,23 @@
+header {
+    margin: 0 auto;
+    border-bottom: 3px solid white;
+  
+  }
+  
+  
+  .nav-list-section {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-link, .search-link, .home-link {
+    list-style-type: none;
+    color: white;
+    padding: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }

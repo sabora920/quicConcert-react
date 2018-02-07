@@ -2,7 +2,6 @@ import { API_BASE_URL } from '../config';
 export const FETCH_DETAILS_REQUEST = 'FETCH DETAILS REQUEST';
 export const FETCH_DETAILS_SUCCESS = 'FETCH DETAILS SUCCESS';
 export const FETCH_DETAILS_ERROR = 'FETCH DETAILS ERROR';
-export const SHOW_USER_EVENT = 'SHOW USER EVENT';
 
 export const fetchDetailsRequest = () => ({
     type: FETCH_DETAILS_REQUEST
@@ -10,36 +9,31 @@ export const fetchDetailsRequest = () => ({
 
 export const fetchDetailsSuccess = (data) => ({
     type: FETCH_DETAILS_SUCCESS,
-    data
+        data
 })
 
 export const fetchDetailsError = (err) => ({
     type: FETCH_DETAILS_ERROR,
-    err
+        err
 })
 
-export const displaUserEventDetails = () => ({
-    type: SHOW_USER_EVENT
-})
+export const fetchEventDetails = (id) => ({
 
-export const fetchEventDetails = function(id) {
-  // use url params to pass the id?
-  console.log(id)
-  return function(dispatch) {
-      dispatch(fetchDetailsRequest());
-      return fetch(`${API_BASE_URL}/api/concerts/${id}`, {
-          method: 'GET',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      }).then(res => {
-          if (!res.ok) {
-              return Promise.reject(res.statusText);
-          }
-          return res.json();
-      }).then(details => {
-          console.log(details)
-          dispatch(fetchDetailsSuccess(details));
-      }).catch(err => {
-          dispatch(fetchDetailsError(err))
-      })
-  }
-}
+    function (dispatch) {
+        dispatch(fetchDetailsRequest());
+        return fetch(`${API_BASE_URL}/api/concerts/${id}`, {
+            method: 'GET',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        }).then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json();
+        }).then(details => {
+            //   console.log(details)
+            dispatch(fetchDetailsSuccess(details));
+        }).catch(err => {
+            dispatch(fetchDetailsError(err))
+        })
+    }
+})

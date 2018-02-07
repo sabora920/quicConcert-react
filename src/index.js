@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import ConcertApp from './components/concert-app';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
-import MainPage from './app';
-import {BrowserRouter} from 'react-router-dom';
+
+import './index.css';
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <MainPage />
-      </Provider>
-    </BrowserRouter>,
+    <Router>
+        <Provider store={store}>
+            <ConcertApp />
+        </Provider>
+    </Router>,
     document.getElementById('root')
 );
 registerServiceWorker();

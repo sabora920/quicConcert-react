@@ -1,19 +1,44 @@
 .concert-results {
   color: white;
-  margin: 250px;  
-  margin-top: 150px;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
-li {
-  list-style-type: none;
-  padding-top: 10px;
-  border-radius: 10px;
-  background: rgba(171, 230, 238, 0.5);
-  margin-bottom: 40px;
-}
-
-.results {
+.tkmConcertList {
   display: block;
-  left: 50%;  
+  list-style-type: none;
+  padding: 30px;
+  /* text-align: center; */
+  margin: 0 auto;
+  /* vertical-align: middle; */
+}
+
+.concert-content {
   text-align: center;
+}
+
+.concert-results {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  border: 1px solid white;
+  padding: 0;
+
+}
+
+#concert-name {
+  font-weight: bold;
+  max-width: 120px;
+}
+
+#share-button, #buy-tickets-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgb(52, 139, 238);
+  transition-duration: 0.8s;
+  border-radius: 8px;
+  border: 3px solid black;
+  font-size: 16px;
 }

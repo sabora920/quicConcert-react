@@ -1,0 +1,50 @@
+.user-input-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#location-question {
+    color: white;
+  }
+  
+.input-form {
+    margin: 0 auto;
+    font-size: 24px;
+    border-radius: 10px;
+  
+}
+  
+#spinner {
+    text-align: center;
+    margin-top: 20px;
+}
+  
+.searchButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: rgb(52, 139, 238);
+    transition-duration: 0.8s;
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    border: 3px solid black;
+    font-size: 16px;
+}
+  
+.searchButton:hover {
+    background-color: rgb(114, 187, 236);
+}
+  
+#search-input {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+  
+input[type=text], textarea {
+    transition: all 0.3 ease-in-out;
+    outline: none;
+}
+  

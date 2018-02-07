@@ -1,15 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './begin.css'
-import { displayUserLocation } from '../actions/concerts';
 
-export function BeginConcertSearch(props) {
-  return (
-    <button 
-      onClick={() => props.dispatch(displayUserLocation())} name='Begin' 
-      className='button'>Go!
-    </button> 
-  )
+function Button(props) {
+
+  if (props.onClick) {
+    return (
+      <button className={props.className ? props.className : 'button-main'} id={props.id} onClick={() => props.onClick()}>{props.buttonText}</button>
+    )
+  } else {
+    return (
+      <button className={props.className ? props.className : 'button-main'} id={props.id}>{props.buttonText}</button>
+    )
+  }
+
 }
-
-export default connect()(BeginConcertSearch)
+//it would then be import without curly braces for this way
+export default Button;

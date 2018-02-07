@@ -1,49 +1,70 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import ShareEvent from './shareevent';
-import './concertdetails.css';
+// import ShareEvent from './shareevent';
+import Button from './begin';
 import { selectConcert } from '../actions/concerts';
 import { showModal } from '../actions/modal';
-import { fetchConcerts } from '../actions/concerts';
+import { withRouter } from 'react-router-dom'
 
-export class ConcertDetails extends React.Component {
+import './concertdetails.css';
+import HandleNoConcerts from './noresults';
 
-  componentDidMount() {
-    this.props.dispatch(fetchConcerts(this.props.match.params.id));
+export function ConcertDetails(props) {
+
+  if (props.concerts.length < 1) {
+    return <HandleNoConcerts />
   }
 
-  handleActions = (concert) => {
-    this.props.dispatch(selectConcert(concert));
-    this.props.dispatch(showModal());    
+  const handleActions = (concert) => {
+    props.dispatch(selectConcert(concert));
+    props.dispatch(showModal());
+
   }
 
-      render() {
-        const list = this.props.concerts.map((concert, index) => {
-          return (
-            <li key={concert.id}>
-            <div>{concert.name}</div>
-            <div>{concert.classifications[0].genre.name}</div>
-            <div>{concert.dates.start.localDate}</div>
-            <div>{concert.dates.start.localTime}</div>
-            <div><a target='_blank' href={concert.url}><button>Buy Tickets</button></a></div>
-            <div><button 
-              onClick={() => this.handleActions(concert)}
-            >Share</button></div>
-            <div><ShareEvent /></div>
-            </li>
-        )});
-        return (
-        <ul className='concert-results'>{list}</ul>
-        )
-    }     
+  const list = props.concerts.map(concert => {
+
+    const concertId = concert.id;
+    const concertTitle = concert.name;
+    const concertGenre = concert.classifications[0].genre.name;
+    const concertDate = concert.dates.start.localDate;
+    const concertTime = concert.dates.start.localTime;
+    const url = concert.url;
+
+    return (
+      <li className='tkmConcertList' key={concertId}>
+      <div className='concert-content'>
+        <div id='concert-name'>{concertTitle}</div>
+        <div id='concert-genre'>{concertGenre ? concertGenre : null}</div>
+        <div id='concert-date'>{concertDate}</div>
+        <div id='concert-time'>{concertTime}</div>
+        <div id='buy-tickets-container'>
+      </div>
+          <a target='_blank' href={url}>
+            <Button id='buy-tickets-button' buttonText='Buy Tickets' />
+          </a>
+        </div>
+        {/* <div id='share-button-container'>
+          <Button id='share-button' buttonText='Share'
+            onClick={() => handleActions(concert)} />
+        </div> */}
+        {/* <div>
+          <ShareEvent />
+        </div> */}
+      </li>
+    )
+  });
+
+  return (
+    <ul className='concert-results'>
+      {list}
+    </ul>
+  )
 }
 
-const mapStateToProps = function(state){
-    return {
-        concerts: state.concerts || []
-    }
+const mapStateToProps = state => {
+  return {
+    concerts: state.concertsReducer.concerts,
+  }
 }
 
-export default connect(mapStateToProps)(ConcertDetails)
-
-//fix indentions
+export default withRouter(connect(mapStateToProps)(ConcertDetails))
